@@ -76,7 +76,7 @@ func readBulk(reader *bufio.Reader, head string) ([]byte, error) {
 			_, err = reader.ReadString('\n')
 		}
 	default:
-		return nil, RedisError("Expecting Prefix '$' or ':'")
+		return nil, RedisError("Expecting Prefix '$' or ':' for \n    " + head)
 	}
 
 	return data, err
